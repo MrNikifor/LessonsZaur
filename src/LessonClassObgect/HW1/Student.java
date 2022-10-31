@@ -38,6 +38,7 @@ class StudentTest{
         Misha1.AverageGradeInMathematics = 5.5;
         Misha1.AverageGradeInEconomics = 9.5;
         Misha1.AverageGradeInAForeignLanguage = 6.9;
+
         Student Kolya1 = new Student();
         Kolya1.StudentIDNumber = 3;
         Kolya1.name = "Kolya";
@@ -47,8 +48,8 @@ class StudentTest{
         Kolya1.AverageGradeInEconomics = 8.1;
         Kolya1.AverageGradeInAForeignLanguage = 3.6;
 
-        System.out.println("Average rating Sergeya " + "- " + ((Sergei1.AverageGradeInMathematics + Sergei1.AverageGradeInEconomics + Sergei1.AverageGradeInAForeignLanguage) / 3));
-        System.out.println("Average rating Mishi " + "- " + ((Misha1.AverageGradeInMathematics + Misha1.AverageGradeInEconomics + Misha1.AverageGradeInAForeignLanguage) / 3));
-        System.out.println("Average rating Koli " + "- " + ((Kolya1.AverageGradeInMathematics + Kolya1.AverageGradeInEconomics + Kolya1.AverageGradeInAForeignLanguage) / 3));
+        System.out.println("Average rating " + Sergei1.name + " " + Sergei1.surname + " - " + ((Sergei1.AverageGradeInMathematics + Sergei1.AverageGradeInEconomics + Sergei1.AverageGradeInAForeignLanguage) / 3));
+        System.out.println("Average rating " + Misha1.name + " " + Misha1.surname + " - " + ((Misha1.AverageGradeInMathematics + Misha1.AverageGradeInEconomics + Misha1.AverageGradeInAForeignLanguage) / 3));
+        System.out.println("Average rating " + Kolya1.name + " " + Kolya1.surname + " - " + ((Kolya1.AverageGradeInMathematics + Kolya1.AverageGradeInEconomics + Kolya1.AverageGradeInAForeignLanguage) / 3));
     }
 }
