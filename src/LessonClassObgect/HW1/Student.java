@@ -19,15 +19,46 @@ package LessonClassObgect.HW1;
 В данном классе также создайте метод увеличения зарплаты вдвое. Создайте второй класс EmployeeTest в котором создайте 2 объекта
 класса Employee. Увеличте зарплату каждому работнику вдвое с помощью метода и выведите на экран значение этой зарплаты.
 */
+/*Задание 3:
+1. Создайте класс, в котором будут 5 overloaded методов, которые вычесляют сумму нуля, одного, двух, трех и четырех целых чисел
+соответственно, передают эту сумму в output и выводят ее на экран. В случае когда слогаемые отсутствуют (т.е. когда параметров нет).
+сумма пусть равняется 0.
+2. Измените класс Student так, чтобы имели 3 конструктора.
+1 - принемает все параметры.
+2 - только id, name, surname, course.
+3 - не имеет значений. Создайте в классе StudentTest 3 объекта с помощью разных конструкторов.
+*/
 
 public class Student {
     int StudentIDNumber;
     String name;
     String surname;
     int YearOfStudy;
+    int course;
     double averageGradeInMathematics;
     double averageGradeInEconomics;
     double averageGradeInAForeignLanguage;
+
+    public Student(int studentIDNumber, String name, String surname, int yearOfStudy,int course, double averageGradeInMathematics, double averageGradeInEconomics, double averageGradeInAForeignLanguage) {
+        StudentIDNumber = studentIDNumber;
+        this.name = name;
+        this.surname = surname;
+        this.YearOfStudy = yearOfStudy;
+        this.course = course;
+        this.averageGradeInMathematics = averageGradeInMathematics;
+        this.averageGradeInEconomics = averageGradeInEconomics;
+        this.averageGradeInAForeignLanguage = averageGradeInAForeignLanguage;
+    }
+
+    public Student(int studentIDNumber, String name, String surname,int course) {
+        StudentIDNumber = studentIDNumber;
+        this.name = name;
+        this.surname = surname;
+        this.course = course;
+    }
+
+    public Student() {
+    }
 }
 class StudentTest{
     double AverageRating(Student st){
@@ -42,6 +73,7 @@ class StudentTest{
         Sergei1.name = "Sergei";
         Sergei1.surname = "Markushov";
         Sergei1.YearOfStudy = 2021;
+        Sergei1.course = 5;
         Sergei1.averageGradeInMathematics = 8.5;
         Sergei1.averageGradeInEconomics = 7.2;
         Sergei1.averageGradeInAForeignLanguage = 9.3;
@@ -52,6 +84,7 @@ class StudentTest{
         Misha1.name = "Misha";
         Misha1.surname = "Bogatirev";
         Misha1.YearOfStudy = 2017;
+        Misha1.course = 4;
         Misha1.averageGradeInMathematics = 5.5;
         Misha1.averageGradeInEconomics = 9.5;
         Misha1.averageGradeInAForeignLanguage = 6.9;
@@ -61,14 +94,29 @@ class StudentTest{
         Kolya1.name = "Kolya";
         Kolya1.surname = "Lagutin";
         Kolya1.YearOfStudy = 2013;
+        Kolya1.course = 3;
         Kolya1.averageGradeInMathematics = 9.3;
         Kolya1.averageGradeInEconomics = 8.1;
         Kolya1.averageGradeInAForeignLanguage = 7.6;
+
+        // Задание 3
+        Student Serg2 = new Student(1,"Serega", "Markuch",2021,5,
+                8.5,7.2,9.3);
+
+        Student Misha2 = new Student(2,"Misha","Bogat",4);
+
+        Student Kolay2 = new Student();
+
+
 
         StudentTest test = new StudentTest();
         test.AverageRating(Sergei1);
         test.AverageRating(Misha1);
         test.AverageRating(Kolya1);
+
+        test.AverageRating(Serg2);
+        test.AverageRating(Misha2);
+        test.AverageRating(Kolay2);
 
 //        System.out.println("Average rating " + Sergei1.name + " " + Sergei1.surname + " - " + ((Sergei1.averageGradeInMathematics + Sergei1.averageGradeInEconomics + Sergei1.averageGradeInAForeignLanguage) / 3));
 //        System.out.println("Average rating " + Misha1.name + " " + Misha1.surname + " - " + ((Misha1.averageGradeInMathematics + Misha1.averageGradeInEconomics + Misha1.averageGradeInAForeignLanguage) / 3));
